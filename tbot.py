@@ -396,7 +396,7 @@ def get_text(message):
         sql = db.cursor()
         for i in sql.execute(f'SELECT cash FROM users WHERE id = {user_id}'):
             for ab in sql.execute(f'SELECT cash_energy FROM users WHERE id = {user_id}'):
-                client.send_message(message.chat.id, f'*Ваше имя:* {name}\n\n*ID:* {user_id}\n\n*Ваш баланс:* {round(i[0], 2)}₽\n\n*💸Всего пополнено:* {ab[0]}₽\n🤑*Всего выведено:* {round(all_vivods, 2)}₽', reply_markup = markup_inline, parse_mode = "Markdown")
+                client.send_message(message.chat.id, f'*Ваше имя:* {name}\n\n*ID:* {user_id}\n\n*Ваш баланс:* {round(i[0], 2)}₽\n\n*💸Всего пополнено:* {round(ab[0], 2)}₽\n🤑*Всего выведено:* {round(all_vivods, 2)}₽', reply_markup = markup_inline, parse_mode = "Markdown")
                 break
             
     if message.text == '💵Мой доход':
