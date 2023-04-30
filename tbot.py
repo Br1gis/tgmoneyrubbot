@@ -17,7 +17,7 @@ from pyqiwip2p.types import QiwiCustomer, QiwiDatetime
 
 client = telebot.TeleBot(configury.config['token'])
 
-QIWI_PRIV_KEY = "eyJ2ZXJzaW9uIjoiUDJQIiwiZGF0YSI6eyJwYXlpbl9tZXJjaGFudF9zaXRlX3VpZCI6ImZzenY5NC0wMCIsInVzZXJfaWQiOiI3OTA2MzYyNjkxOCIsInNlY3JldCI6ImZlZjRhMTM1MDhjNjQwMzM3NzkwYzI4NGQ4ZjNkMWJmYjI5MGNjMjYxNmRiODU2M2NlZGJjN2E2YjhhNmVmZGIifX0="
+QIWI_PRIV_KEY = "="
 
 p2p = QiwiP2P(auth_key=QIWI_PRIV_KEY)
 now = datetime.now()
@@ -26,8 +26,8 @@ db = sqlite3.connect('allusbase.db', check_same_thread = False)
 sql = db.cursor()
 
 
-token = "487e928fde827febbe01257b466a7ff5"
-phone = "+79063626918"
+token = ""
+phone = ""
 wallet = pyqiwi.Wallet(token=token, number=phone)
 print(wallet.balance())
 
